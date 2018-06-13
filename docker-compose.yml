@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.2.4
+    ports:
+      - 9200:9200
+    volumes:
+      - ./volumes/elasticsearch:/usr/share/elasticsearch/data
+  
+  kibana:
+    image: docker.elastic.co/kibana/kibana:6.2.4
+    ports:
+      - 5601:5601
+    links:
+      - elasticsearch
+
+  fluentd:
+    build: ./fluentd
+    ports:
+      - 2055:2055/udp
+      - 6343:6343/udp
+    links:
+      - elasticsearch
+    volumes:
+      - ./fluentd/fluent.conf:/fluentd/etc/fluent.conf

@@ -85,6 +85,8 @@ $ sudo docoker-compose up
 
 Following `header_decoded` entry will be added to each record. Please pick anything you want to remove `header_decoded` itself for Kibana to accept.
 
+Please see [fluentd.conf](fluentd/fluent.conf) for how to do that.
+
 ```json
   "header_decoded": {
     "_index": "packets-2018-06-14",

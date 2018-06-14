@@ -10,6 +10,8 @@ This repository containes Dockerfiles to kickstart xflow collector with:
 * Elasticsearch
 * Kibana
 
+:bulb: If you are interested in sflow collector with using wireshark dissector, please try [wireshark-dissector](https://github.com/codeout/docker-xflow-collector/tree/wireshark-dissector) branch.
+
 ## How to start
 
 ### Linux
